@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/modernist-46567b4d-0547-40e2-bb60-ec159fbbcbcd/styles.css">
+  <script src="_ds/modernist-46567b4d-0547-40e2-bb60-ec159fbbcbcd/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: #281d14; }
+    a { color: #ffc691; }
+    a:hover { color: #fff2e4; }
+  </style>
+</helmet>
+<div style="min-height: 100vh; background: #281d14; display: grid; place-items: center; padding: 48px; box-sizing: border-box; font-family: 'Archivo', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;">
+  <div ref="{{ cardRef }}" onPointerEnter="{{ onEnter }}" onPointerMove="{{ onMove }}" onPointerLeave="{{ onLeave }}" style="position: relative; width: 741px; height: 425px; user-select: none; transform: perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1); transform-style: preserve-3d; transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1); will-change: transform;">
+
+    <div style="position: absolute; inset: 0; isolation: isolate; overflow: hidden; background: #ef671c; clip-path: path('M 25 0 L 541 0 A 21 21 0 0 0 583 0 L 716 0 A 25 25 0 0 0 741 25 L 741 400 A 25 25 0 0 0 716 425 L 583 425 A 21 21 0 0 0 541 425 L 25 425 A 25 25 0 0 0 0 400 L 0 25 A 25 25 0 0 0 25 0 Z');">
+
+      <div style="position: absolute; inset: 0; background-image: radial-gradient(115% 85% at 76% 6%, rgba(255,198,145,.95) 0%, rgba(255,198,145,0) 56%), linear-gradient(38deg, rgba(239,103,28,0) 16%, rgba(255,222,190,.9) 33%, rgba(254,144,70,.45) 44%, rgba(239,103,28,0) 58%), linear-gradient(22deg, rgba(239,103,28,0) 44%, rgba(255,198,145,.5) 58%, rgba(239,103,28,0) 71%), linear-gradient(206deg, rgba(255,198,145,.3) 0%, rgba(239,103,28,0) 42%), radial-gradient(65% 75% at 14% 96%, rgba(198,74,14,.55) 0%, rgba(239,103,28,0) 72%);"></div>
+
+      <div ref="{{ noiseRef }}" style="position: absolute; inset: 0; opacity: .55; mix-blend-mode: overlay; background-image: radial-gradient(rgba(0,0,0,.9) .55px, transparent .6px), radial-gradient(rgba(255,255,255,.9) .55px, transparent .6px); background-size: 3px 3px, 3px 3px; background-position: 0 0, 1.5px 1.5px;"></div>
+      <div ref="{{ noise2Ref }}" style="position: absolute; inset: 0; opacity: .4; mix-blend-mode: overlay; background-image: radial-gradient(rgba(0,0,0,.7) .6px, transparent .7px), radial-gradient(rgba(255,255,255,.6) .6px, transparent .7px); background-size: 5px 5px, 7px 7px; background-position: 2px 1px, 3px 4px;"></div>
+
+      <div style="position: absolute; top: 0; bottom: 0; left: 562px; width: 2px; background-image: repeating-linear-gradient(to bottom, #5a352055 0 9px, transparent 9px 18px);"></div>
+
+      <sc-if value="{{ showWatermark }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; left: 562px; top: 0; width: 179px; height: 425px; pointer-events: none;">
+          <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; font-size: 144px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; color: #ffdcbe; opacity: .55; font-variant-numeric: tabular-nums;">{{ watermarkYear }}</span>
+        </div>
+      </sc-if>
+
+      <div style="position: absolute; inset: 0; color: #5a3520;">
+        <div style="position: absolute; left: 57px; top: 58px; font-size: 19.72px; line-height: 28px; letter-spacing: 0.016em; font-weight: 600; text-transform: uppercase;">
+          <div>Litdex Network presents</div>
+          <div>Genesis Champions</div>
+        </div>
+
+        <div style="position: absolute; left: 57px; top: 185px; font-size: 64.79px; line-height: 65px; letter-spacing: -0.01em; font-weight: 800; text-transform: uppercase;">
+          <div>Champion</div>
+          <div style="font-variant-numeric: tabular-nums;">{{ tokenNumber }}</div>
+        </div>
+
+        <div style="position: absolute; left: 57px; top: 348px; font-size: 19.72px; letter-spacing: 0.016em; font-weight: 600; text-transform: uppercase; white-space: nowrap;">Base Network · Minted {{ mintDateText }}</div>
+
+        <div style="position: absolute; left: 57px; top: 382px; font-size: 14px; letter-spacing: 0.1em; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; text-transform: uppercase; font-weight: 500; white-space: nowrap;">{{ codeText }}</div>
+
+        <div style="position: absolute; left: 562px; top: 0; width: 179px; height: 425px;">
+          <div ref="{{ stubRef }}" style="position: absolute; left: 50%; top: 50%; display: inline-block; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; font-size: 67.61px; line-height: 1.05; font-weight: 800; text-transform: uppercase; text-align: center; opacity: .9;">
+            <div>{{ rarityText }}</div>
+            <div>{{ tierText }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; clip-path: path('M 25 0 L 541 0 A 21 21 0 0 0 583 0 L 716 0 A 25 25 0 0 0 741 25 L 741 400 A 25 25 0 0 0 716 425 L 583 425 A 21 21 0 0 0 541 425 L 25 425 A 25 25 0 0 0 0 400 L 0 25 A 25 25 0 0 0 25 0 Z');">
+      <svg viewBox="0 0 741 425" width="741" height="425" style="display: block;">
+        <defs>
+          <linearGradient id="legendGold" x1="0" y1="0" x2="0.18" y2="1">
+            <stop offset="0" stop-color="#ffe6a3"></stop>
+            <stop offset="0.16" stop-color="#f9cf6b"></stop>
+            <stop offset="0.42" stop-color="#f5b942"></stop>
+            <stop offset="0.68" stop-color="#e09f2c"></stop>
+            <stop offset="1" stop-color="#b87a17"></stop>
+          </linearGradient>
+        </defs>
+        <path d="M 25 0 L 541 0 A 21 21 0 0 0 583 0 L 716 0 A 25 25 0 0 0 741 25 L 741 400 A 25 25 0 0 0 716 425 L 583 425 A 21 21 0 0 0 541 425 L 25 425 A 25 25 0 0 0 0 400 L 0 25 A 25 25 0 0 0 25 0 Z" fill="none" stroke="url(#legendGold)" stroke-width="36"></path>
+        <path d="M 42.72 24 L 523.93 24 A 45 45 0 0 0 600.07 24 L 698.28 24 A 49 49 0 0 0 717 42.72 L 717 382.28 A 49 49 0 0 0 698.28 401 L 600.07 401 A 45 45 0 0 0 523.93 401 L 42.72 401 A 49 49 0 0 0 24 382.28 L 24 42.72 A 49 49 0 0 0 42.72 24 Z" fill="none" stroke="url(#legendGold)" stroke-width="4"></path>
+      </svg>
+    </div>
+
+    <div ref="{{ glareRef }}" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; transition: background 420ms ease-out; clip-path: path('M 25 0 L 541 0 A 21 21 0 0 0 583 0 L 716 0 A 25 25 0 0 0 741 25 L 741 400 A 25 25 0 0 0 716 425 L 583 425 A 21 21 0 0 0 541 425 L 25 425 A 25 25 0 0 0 0 400 L 0 25 A 25 25 0 0 0 25 0 Z');"></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:837,&quot;height&quot;:521},&quot;tokenId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Token&quot;},&quot;rarity&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Token&quot;},&quot;tier&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Token&quot;},&quot;mintDate&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Token&quot;},&quot;code&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Token&quot;},&quot;tilt&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Card&quot;},&quot;showWatermark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Card&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.5,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Card&quot;}}">
+class Component extends DCLogic {
+  cardRef = React.createRef();
+  glareRef = React.createRef();
+  stubRef = React.createRef();
+  noiseRef = React.createRef();
+  noise2Ref = React.createRef();
+
+  componentDidMount() { this.sync(); if (document.fonts) document.fonts.ready.then(() => this.fitStub()); }
+  componentDidUpdate() { this.sync(); }
+
+  sync() {
+    this.fitStub();
+    const g = this.props.grain ?? 0.55;
+    if (this.noiseRef.current) this.noiseRef.current.style.opacity = String(g);
+    if (this.noise2Ref.current) this.noise2Ref.current.style.opacity = String(g * 0.72);
+  }
+
+  fitStub() {
+    const el = this.stubRef.current;
+    if (!el) return;
+    el.style.transform = "translate(-50%, -50%) rotate(-90deg)";
+    const w = el.offsetWidth || el.scrollWidth;
+    const h = el.offsetHeight || 0;
+    if (!w) return;
+    const k = Math.min(1, 381 / w, h ? 168 / h : 1);
+    el.style.transform = "translate(-50%, -50%) rotate(-90deg) scale(" + k.toFixed(4) + ")";
+  }
+
+  tiltOn() { return this.props.tilt !== false; }
+
+  renderVals() {
+    const tokenId = String(this.props.tokenId ?? "0001").trim();
+    const mintDate = String(this.props.mintDate ?? "Sep 2026");
+    const year = (mintDate.match(/\d{4}/) || [""])[0];
+    return {
+      watermarkYear: year,
+      showWatermark: (this.props.showWatermark ?? false) && year !== "",
+      tokenNumber: tokenId.startsWith("#") ? tokenId : "#" + tokenId,
+      rarityText: String(this.props.rarity ?? "Legend"),
+      tierText: String(this.props.tier ?? "Tier 1"),
+      mintDateText: mintDate,
+      codeText: String(this.props.code ?? "LTX-A93F2"),
+      cardRef: this.cardRef,
+      glareRef: this.glareRef,
+      stubRef: this.stubRef,
+      noiseRef: this.noiseRef,
+      noise2Ref: this.noise2Ref,
+      onEnter: () => {
+        if (!this.tiltOn()) return;
+        if (this.cardRef.current) this.cardRef.current.style.transition = "none";
+        if (this.glareRef.current) this.glareRef.current.style.transition = "none";
+      },
+      onMove: (e) => {
+        if (!this.tiltOn()) return;
+        const el = this.cardRef.current;
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        const dx = (e.clientX - r.left) / r.width - 0.5;
+        const dy = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = "perspective(1200px) rotateX(" + (-dy * 18).toFixed(2) + "deg) rotateY(" + (dx * 18).toFixed(2) + "deg) scale(1.02)";
+        if (this.glareRef.current) {
+          this.glareRef.current.style.background = "radial-gradient(38% 55% at " + ((dx + 0.5) * 100).toFixed(1) + "% " + ((dy + 0.5) * 100).toFixed(1) + "%, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 70%)";
+        }
+      },
+      onLeave: () => {
+        const el = this.cardRef.current;
+        if (el) {
+          el.style.transition = "transform 420ms cubic-bezier(0.22, 1, 0.36, 1)";
+          el.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1)";
+        }
+        if (this.glareRef.current) {
+          this.glareRef.current.style.transition = "background 420ms ease-out";
+          this.glareRef.current.style.background = "transparent";
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
